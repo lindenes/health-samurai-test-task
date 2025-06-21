@@ -2,10 +2,9 @@
 
 (defn my-reduce
   [fn list acc]
-   (if (empty? list)
+  (if (empty? list)
     acc
-    (recur fn (rest list) (fn (first list) acc)))
-  )
+    (recur fn (rest list) (fn (first list) acc))))
 
 (defn my-reduce2
   [fn list]
@@ -14,13 +13,3 @@
     (if (empty? remaining)
       result
       (recur (rest remaining) (fn result (first remaining))))))
-
-
-
-;; (defn my-reduce
-;;   ([fn list acc]
-;;   (if (empty? list)
-;;     acc
-;;     (recur fn (rest list) (fn (first list) acc))))
-;;    ([fn list] (my-reduce fn (rest list) (first list)))
-;;   )
